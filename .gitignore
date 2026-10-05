@@ -1,32 +1,41 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 # dependencies
-node_modules/
-.pnp
+/node_modules
+/.pnp
 .pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
 
 # next.js
-.next/
-out/
-build/
+/.next/
+/out/
 
-# env files (keep .env.example committed)
-.env
-.env*.local
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# env files (can opt-in for committing if needed)
+.env*
 
 # vercel
 .vercel
 
-# misc
-.DS_Store
-coverage/
-
-# Claude Code instructions (local only)
-CLAUDE.md
+# typescript
+*.tsbuildinfo
+next-env.d.ts
